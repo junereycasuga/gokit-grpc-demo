@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/junereycasuga/gokit-grpc-demo/pb";
+
+service MathService {
+  rpc Add(MathRequest) returns (MathResponse) {}
+  rpc Subtract(MathRequest) returns (MathResponse) {}
+  rpc Multiply(MathRequest) returns (MathResponse) {}
+  rpc Divide(MathRequest) returns (MathResponse) {}
+}
+
+message MathRequest {
+  float numA = 1;
+  float numB = 2;
+}
+
+message MathResponse {
+  float result = 1;
+}
